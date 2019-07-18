@@ -26,41 +26,21 @@ const NavLink = styled(Link)`
 `
 
 const Header = () => (
-  <header
+  <footer
     css={css`
-      background: #fff;
-      border-bottom: 1px solid #eee;
-      display: flex;
-      justify-content: space-between;
-      padding-top: 2rem;
       padding-bottom: 2rem;
       max-width: 90vw;
       width: 550px;
       margin: 2rem auto;
     `}
   >
-    <NavLink
-      to="/"
-      css={css`
-        color: #333;
-        font-weight: bold;
-      `}
-    >
-      Ujval Joshi
-    </NavLink>
-    <nav
-      css={css`
-        margin-top: 0;
-      `}
-    >
-      <NavLink to="/" activeClassName="current-page">
-        Home
-      </NavLink>
-      <NavLink to="/contact/" activeClassName="current-page">
-        Contact
-      </NavLink>
-    </nav>
-  </header>
+    <p>
+      &copy; {new Date().getFullYear()}, Built with{" "}
+      <a href="https://www.gatsbyjs.org" target="_blank">
+        Gatsby
+      </a>
+    </p>
+  </footer>
 )
 
 export default Header

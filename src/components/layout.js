@@ -10,6 +10,7 @@ import PropTypes from "prop-types"
 import { Global, css } from "@emotion/core"
 import useSiteMetadata from "../hooks/use-sitemetadata"
 import Header from "./header"
+import Footer from "./footer"
 import Helmet from "react-helmet"
 import "./layout.css"
 
@@ -29,19 +30,16 @@ const Layout = ({ children }) => {
           * + * {
             margin-top: 1rem;
           }
-
           html,
           body {
             margin: 0;
-            color: #555;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-              Helvetica, Arial, sans-serif, "Apple Color Emoji",
-              "Segoe UI Emoji", "Segoe UI Symbol";
+            color: #333;
+            font-family: "IBM Plex Sans", sans-serif;
             font-size: 14px;
             line-height: 1.4;
 
             @media (min-width: calc(550px + 10vw)) {
-              font-size: 18px;
+              font-size: 14px;
             }
 
             /* remove margin for the main div that Gatsby mounts into */
@@ -56,7 +54,7 @@ const Layout = ({ children }) => {
           h4,
           h5,
           h6 {
-            color: #222;
+            color: #333;
             line-height: 1.1;
 
             + * {
@@ -64,8 +62,14 @@ const Layout = ({ children }) => {
             }
           }
 
+          h2 {
+            font-size: 1.2rem;
+          }
+
           p {
-            font-family: "Merriweather", serif;
+            padding: 5px 0;
+            line-height: 1.9;
+            font-weight: 400;
           }
 
           strong {
@@ -75,11 +79,17 @@ const Layout = ({ children }) => {
           li {
             margin-top: 0.25rem;
           }
+          hr {
+            border: 1px solid #eee;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            border-bottom: 0;
+          }
         `}
       />
       <Helmet>
         <html lang="en" />
-        <title>{title}</title>
+        <title>{title} - Front-End Developer</title>
         <meta name="description" content={description} />
       </Helmet>
       <Header />
@@ -92,6 +102,7 @@ const Layout = ({ children }) => {
       >
         {children}
       </main>
+      <Footer />
     </>
   )
 }

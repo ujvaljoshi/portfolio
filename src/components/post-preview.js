@@ -7,21 +7,17 @@ import ReadLink from "../components/read-link"
 const PostPreview = ({ post }) => (
   <article
     css={css`
-      border-bottom: 1px solid #ddd;
       display: flex;
+      flex-direction: column;
       margin-top: 0;
       padding-bottom: 1rem;
-
-      :first-of-type {
-        margin-top: 1rem;
-      }
+      width: 100%;
     `}
   >
-    <Link
-      to={post.slug}
+    <div
       css={css`
         margin: 1rem 1rem 0 0;
-        width: 100px;
+        width: 100%;
       `}
     >
       <Image
@@ -29,17 +25,16 @@ const PostPreview = ({ post }) => (
           * {
             margin-top: 0;
           }
+
+          margin: 0 auto;
+          border-radius: 10px;
         `}
         fluid={post.image.sharp.fluid}
         alt={post.title}
       />
-    </Link>
+    </div>
     <div>
-      <h3>
-        <Link to={post.slug}>{post.title}</Link>
-      </h3>
-      <p>{post.excerpt}</p>
-      <ReadLink to={post.slug}>read this post &rarr;</ReadLink>
+      <h2 style={{ textAlign: "center" }}>{post.title}</h2>
     </div>
   </article>
 )
