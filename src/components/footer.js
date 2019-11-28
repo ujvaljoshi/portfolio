@@ -1,6 +1,5 @@
 import React from "react"
 import { css } from "@emotion/core"
-import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 const Header = () => (
   <footer
@@ -13,9 +12,9 @@ const Header = () => (
   >
     <p>
       &copy; {new Date().getFullYear()}, Built with{" "}
-      <OutboundLink href="https://www.gatsbyjs.org" target="_blank">
+      <a href="https://www.gatsbyjs.org" target="_blank">
         Gatsby
-      </OutboundLink>
+      </a>
     </p>
   </footer>
 )
